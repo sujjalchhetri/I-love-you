@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #3fe9f1;
+        }
+        header {
+            background-color: #ff0000;
+            color: rgb(248, 165, 165);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .message {
+            font-size: 26px;
+            margin-top: 20px;
+            color: #d3ab77;
+        }
+        .slideshow {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+        .slides {
+            display: none;
+        }
+        .game-section {
+            background-color: #f5f7f7;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .game-button {
+            padding: 15px 25px;
+            background-color: #ff0000;
+            color: rgb(71, 171, 252);
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #ff0000;
+            color: rgb(101, 180, 219);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>To My Dearest Love</h1>
+</header>
+
+<section>
+    <h2>Just for You</h2>
+    <p class="message">Every moment with you feels like a beautiful dream. I am so lucky to have you in my life. I love you endlessly!</p>
+    <p class="message">Thank you for being you, and for making my world brighter every day. You're my everything!</p>
+</section>
+
+<!-- Slideshow Section -->
+<section class="slideshow">
+    <div class="slides fade">
+        <img src="/slide1.jpg" alt="Slide 1" style= "height:500PX;">
+    </div>
+    <div class="slides fade">
+        <img src="/slide2.jpg" alt="Slide 2" style= "height:500PX;">
+    </div>
+    <div class="slides fade">
+        <img src="/slide3.jpg" alt="Slide 3" style="height: 500px;">
+    </div>
+</section>
+
+<!-- Game Section -->
+<section class="game-section">
+    <h2>Let's Play a Game!</h2>
+    <p class="message">Click the button below to reveal a surprise message just for you!</p>
+    <button class="game-button" onclick="revealMessage()">Click Me!</button>
+   <p id="game-message" style="display:none; font-size: 20px; color: #555; margin-top: 20px;">You are the best thing that ever happened to me. I love you so much!</p>
+</section>
+
+<footer>
+    <p>Made with love by Sujjal for Akhila</p>
+</footer>
+
+<script>
+// Slideshow Script
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+// Game Function
+function revealMessage() {
+    document.getElementById("game-message").style.display = "block";
+}
+</script>
+
+</body>
+</html>
